@@ -1,4 +1,4 @@
-import react, { Component } from 'react';
+import React, { Component } from 'react';
 
 class AuthForm extends Component {
 
@@ -11,25 +11,32 @@ class AuthForm extends Component {
         }
     }
 
+    onSubmit(event) {
+        event.preventDefault();
+        const { email, password } = this.state;
+        this.props.onSubmit({ email, password })
+    }
+
     render() {
         return (
             <div className="row">
-                <form action="" className="col s4">
+                <form onSubmit={this.onSubmit.bind(this)} className="col s4">
                     <div className="input-field">
-                        <label>Email</label>
                         <input
+                            placeholder='email'
                             value={this.state.email}
-                            onChange={e => this.state({email: e.target.value})}
+                            onChange={e => this.setState({ email: e.target.value })}
                             type="text" />
                     </div>
                     <div className='input-field'>
-                        <label>Password</label>
                         <input
+                            placeholder='Password'
                             value={this.state.password}
-                            onChange={e => this.setState({password: e.target.value})}
+                            onChange={e => this.setState({ password: e.target.value })}
                             type="text"
                         />
                     </div>
+                    <button className='btn'>Submit</button>
                 </form>
             </div>
         )
