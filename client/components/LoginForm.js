@@ -4,7 +4,7 @@ import mutation from '../mutations/Login';
 import { graphql } from 'react-apollo';
 import query from '../queries/CurrentUser'
 
-class LoginFrom extends Component {
+class LoginForm extends Component {
 
     // constructor initializing component level state to pass as a props
     constructor(props) {
@@ -37,4 +37,4 @@ class LoginFrom extends Component {
     }
 }
 
-export default graphql(mutation)(LoginFrom);
+export default graphql(mutation)(LoginForm);
