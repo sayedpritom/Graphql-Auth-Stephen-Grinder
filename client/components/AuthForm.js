@@ -36,6 +36,7 @@ class AuthForm extends Component {
                             type="text"
                         />
                     </div>
+                    <div className="errors">{this.props.errors.map(error => <div key={error}>{error}</div>)}</div>
                     <button className='btn'>Submit</button>
                 </form>
             </div>
@@ -43,4 +44,4 @@ class AuthForm extends Component {
     }
 }
 
-export default AuthForm
+export default AuthForm;
